@@ -1,0 +1,12 @@
+{
+  "name": "sd-scala",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies" : {
+    "silent-disco" : "https://github.com/Nikku/silent-disco/archive/dc1e5a51a1ab43263f3426a17eeaaaf118de8737.zip"
+  }
+}

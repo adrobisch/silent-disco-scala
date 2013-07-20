@@ -1,0 +1,10 @@
+@(clientId:String)
+
+define(['sound-cloud'], function(SC) {
+
+    SC.initialize({
+        client_id: '@clientId'
+    });
+
+    return SC;
+});

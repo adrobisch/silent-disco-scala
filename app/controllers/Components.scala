@@ -1,0 +1,3 @@
+package controllers
+
+object Components extends AssetsBuilder

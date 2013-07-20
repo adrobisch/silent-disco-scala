@@ -1,0 +1,403 @@
+/**
+ * loaded to remove angular template flicker on site load
+ * @see http://docs.angularjs.org/api/ng.directive:ngCloak
+ */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+
+/** loading icon integration */
+.icon-loading {
+  background-image: url(../img/ajax-loader.gif);
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  background-position: 0 0;
+  opacity: 1.0;
+}
+
+/** utilities */
+/** for image replacement */
+.ir {
+  display: block;
+  text-indent: -999em;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+/** end utilities */
+
+/**
+ * shared style declarations
+ */
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+.ctn-scroll::-webkit-scrollbar{width:8px;height:8px;}
+.ctn-scroll::-webkit-scrollbar-button:start:decrement,
+.ctn-scroll::-webkit-scrollbar-button:end:increment{display:block;height:0;background-color:transparent;}
+.ctn-scroll::-webkit-scrollbar-track-piece{background-color:#FAFAFA;-webkit-border-radius:0;-webkit-border-bottom-right-radius:2px;-webkit-border-bottom-left-radius:2px;}
+.ctn-scroll::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#999;-webkit-border-radius:2px;}
+.ctn-scroll::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#999;-webkit-border-radius:2px;}
+
+.ctn-scroll {
+  overflow: auto;
+}
+
+.ctn-fixed {
+  position: fixed;
+  top: 41px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 979px) {
+  .ctn-fixed {
+    top: 51px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ctn-fixed .ctn-side {
+    display: none;
+  }
+
+  .ctn-fixed .ctn-main {
+    right: 0;
+  }
+}
+
+.ctn {
+  float: left;
+  height: 100%;
+
+  border-left: solid 1px #DDD;
+  overflow: auto;
+}
+
+.navbar .brand {
+  margin-left: 5px;
+  background-color: #58b123;
+
+  padding: 10px 20px 10px;
+  background: #58b123;
+  background: -webkit-linear-gradient(#58b123,#4ea917);
+  background: linear-gradient(#58b123,#4ea917);
+
+  color: #F7F7F7;
+  text-shadow: 0 1px 0 #18750B;
+
+  box-shadow: -1px 0 0 rgba(255, 255, 255, .08);
+  border-color: rgba(173, 73, 0, .7) rgba(255, 255, 255, .15) #AD4900;
+}
+
+.navbar .nav a {
+  border: 1px solid rgba(0,0,0, .07);
+  border-width: 0 1px;
+}
+
+.ctn-main {
+  width: 50%;
+}
+
+.ctn-side {
+  width: 15%;
+  z-index: 5;
+  overflow: visible;
+}
+
+.ctn-playlist {
+  width: 34%;
+  position: relative;
+  float: right;
+}
+
+.chat {
+  height: 100%;
+  position: relative;
+}
+
+.join {
+  margin: 10px;
+}
+
+.chat form {
+  position: absolute;
+  left: 10px;
+  right: 24px;
+  bottom: 0;
+  margin: 0;
+}
+
+.chat textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  margin-bottom: 5px;
+}
+
+.note {
+  font-size: 0.80em;
+  color: #AAA;
+  margin-bottom: 10px;
+}
+
+.chat .note:hover {
+  color: #333;
+}
+
+.messages {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: 90px;
+}
+
+.messages .controls {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+
+  display: none;
+  opacity: 0.2;
+}
+
+.messages:hover .controls {
+  display: block;
+}
+
+.messages .controls:hover {
+  opacity: 1.0;
+}
+
+.messages .controls a {
+  display: inline-block;
+  padding: 5px;
+}
+
+.message i {
+  opacity: 0.3;
+}
+
+.message:hover i {
+  opacity: 0.8;
+}
+
+/**
+ * Participant column
+ */
+.participant {
+  position: relative;
+  margin: 10px;
+  border: solid 1px;
+  border-color: #CCC;
+  border-radius: 4px;
+  padding: 0;
+}
+
+.participant .options {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  cursor: pointer;
+  border: 1px #CCC;
+}
+
+.participant .options:hover {
+  border-left-style: solid;
+}
+
+.participant img, .participant .options {
+  padding: 1px;
+  height: 36px;
+}
+
+.participant .options {
+  padding-left: 8px;
+  border-radius: 0 3px 3px 0;
+}
+
+.participant img {
+  border-radius: 3px 0 0 3px;
+  border-right: solid 1px #CCC;
+}
+
+.sc-user, .sc-user img, .sc-user .options:hover {
+  border-color: #58b123;
+}
+
+.disabled { opacity: 0.2; }
+
+
+/**
+ * Track column
+ */
+
+.tracks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tracks .btn {
+  opacity: 0.5;
+  padding: 2px 5px;
+}
+
+.tracks .btn:hover {
+  opacity: 1.0;
+}
+
+.track-dropable {
+  margin: 0;
+  padding: 0;
+  height: 4px;
+  background-color: #CCA300;
+  border-bottom: solid 1px #CCC;
+}
+
+.track {
+  position: relative;
+
+  height: 34px;
+
+  border-bottom: solid 1px #CCC;
+  background-color: #FCFCFC;
+}
+
+.track .controls {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.track img {
+  position: absolute;
+  left: 5px;
+
+  padding: 1px;
+  border: solid 1px #AAA;
+  background: #FFF;
+}
+
+.track img { width: 26px; height: 26px; top: 2px; bottom: 2px; }
+
+.track .info {
+  left: 40px;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+
+  position: absolute;
+  line-height: 35px;
+}
+
+.track .title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 100px;
+
+  overflow: hidden;
+}
+
+.track.active {
+  height: 80px;
+
+  background: #DDD;
+  background-image: linear-gradient(to bottom, #DDD, #BBB);
+}
+
+.track.fixed-top {
+  border-bottom: solid 2px #fff;
+}
+
+.track.active .title {
+  right: 55px;
+  height: 28px;
+}
+
+.track.active .btn {
+  opacity: 0.7;
+  padding: 2px 5px;
+}
+
+.track.active .btn:hover {
+  opacity: 1.0;
+}
+
+.track.active img { width: 66px; height: 66px; top: 5px; bottom: 5px; }
+.track.active .info {
+  left: 80px;
+  top: 5px;
+  bottom: 5px;
+  right: 5px;
+}
+
+.track.active .title {
+  right: 180px;
+}
+
+.track-progress {
+  position: relative;
+}
+
+.track-progress {
+  padding-top: 20px;
+  line-height: 20px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.track-progress .current-position {
+  float: left;
+}
+
+.track-progress .total {
+  float: right;
+}
+
+.track-progress .progress {
+  height: 6px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.ctn-playlist .fixed-top {
+  position: fixed;
+  top: 41px;
+  right: 0;
+  width: 34%;
+
+  z-index: 10;
+  display: none;
+}
+
+.ctn-playlist.show-fixed-top .fixed-top {
+  display: block;
+}
+
+.track:focus {
+  background: #E5F0E6;
+}
+
+.track.active:focus {
+  background: #D5DEE2;
+  background-image: linear-gradient(to bottom, #D5DEE2, #AAB2B9);
+}
