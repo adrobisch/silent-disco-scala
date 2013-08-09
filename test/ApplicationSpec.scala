@@ -13,7 +13,7 @@ class ApplicationSpec extends Specification {
 
     def run = {
       val builder = new ProcessBuilder("karma", "start", confPath)
-      val karmaProcess = builder.start();
+      val karmaProcess = builder.start()
 
       println("karma runner starting")
       println(scala.io.Source.fromInputStream(karmaProcess.getInputStream()).getLines().mkString("\n"))

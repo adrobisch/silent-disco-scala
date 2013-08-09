@@ -14,27 +14,27 @@ requirejs.config({
     },
 
     shim: {
+        'jquery' : { exports: '$' },
         'angular' : { deps: [ 'jquery' ], exports: 'angular' },
-        'angular-mocks' : { deps: [ 'angular' ] }
+        'angular-mocks' : { deps: [ 'angular' ] },
+        'ngDefine' : { deps: [ 'angular' ], exports: 'ngDefine' }
     },
 
     packages : [
-        { name: 'disco', location: '/play/sd/app' }
+        { name: 'disco', location: '/play/sd/app' },
+        { name: 'angular-ui', location: '/play/sd/assets/vendor/angular-ui' },
+        { name: 'web-common', location: '/play/sd/assets/vendor/web-common' }
     ]
 
-    // ask Require.js to load these files (all our tests)
-    //deps: tests,
-
-    // start test run, once Require.js is done
-    //callback: window.__karma__.start
 });
 
-require([ 'angular', 'angular-mocks', 'ngDefine', 'jquery'], function(angular) {
-    require(["disco/pages/room"], function () {
-        angular.bootstrap(document, [ "disco.pages" ]);
+define("sound-cloud", [], function () {
+    // empty sound cloud module for tests
+    return {};
+});
 
-        require(tests, function() {
-            window.__karma__.start();
-        });
+require([ 'angular', 'angular-mocks', 'ngDefine', 'jquery'], function() {
+    require(tests, function() {
+        window.__karma__.start();
     });
 });
