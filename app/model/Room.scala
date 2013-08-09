@@ -31,7 +31,7 @@ class Rooms extends Actor {
 
   def create(id: String) = {
     try {
-      sender ! context.children.find(_.path.name == id).getOrElse(context.actorOf(Props(new Room(id))))
+      sender ! context.children.find(_.path.name == id).getOrElse(context.actorOf(Props(new Room(id)), id))
     } catch {
       case ex: InvalidActorNameException => sender ! context.actorFor(id)
     }
