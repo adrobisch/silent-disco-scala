@@ -13,8 +13,6 @@ import play.api.libs.iteratee.Concurrent.Channel
 import play.api.libs.json.JsArray
 import play.api.libs.json.JsString
 import play.api.libs.json.JsObject
-import play.modules.reactivemongo.json.collection.JSONCollection
-import play.modules.reactivemongo.MongoController
 import controllers.DB
 import reactivemongo.bson.BSONObjectID
 import org.joda.time.DateTime
@@ -88,7 +86,9 @@ class Room(roomId: String) extends Actor with ActorLogging {
     case AddParticipant(participantName, channel) => {
       participants = participants + (participantName -> channel)
 
-      val tracks = JsArray(DB.getTracks(roomId))
+      val tracks = JsArray(DB.getTracks(roomId).map({
+        track : JsObject => track - "_id"
+      }))
 
       channel.push(obj(
         "channelJoined" -> obj(
@@ -102,7 +102,8 @@ class Room(roomId: String) extends Actor with ActorLogging {
           }.toSeq),
           "tracks" -> tracks,
           "room" -> obj("name" -> roomId, "id" -> roomId, "position" -> roomPosition,
-            "time" -> DateTime.now().getMillis)
+            "time" -> DateTime.now().getMillis),
+          "time" -> DateTime.now().getMillis
         )
       ))
 
