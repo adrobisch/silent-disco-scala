@@ -1,0 +1,36 @@
+{
+    "id": "silent-disco",
+    "name": "Silent Disco Cloud Instance",
+    "source": "git://github.com/adrobisch/silent-disco-scala",
+    "description": "Run your own silent disco hosted on cloudbees",
+    "doc-url": "https://github.com/adrobisch/silent-disco-scala/blob/master/README.md",    
+    "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/play2_icon.png", 
+    "app-package" : "http://unkonstant.de/dev/repository/silent-disco/sd-scala-1.0-SNAPSHOT.zip",
+    "app-package-type" : "zip",
+
+    "runtime": {
+        "type": "play2",
+        "app-parameters" : { 
+            "runtime.java_version": "1.7"
+        },
+        "app-variables" : { 
+            "proxyBuffering" : false, 
+            "http_version" : "1.1",
+	    "SC_CLIENT_ID" : "yourclientid"
+        }
+    },
+   "services" : [
+     {
+      "name" : "mongohq",
+      "plan" : "base",
+      "settings" : {},
+         "resources" : [
+            {
+                "type" : "mongodb",
+                "alias" : "SILENT_DISCO_DB",
+                "settings" : { "plan" : "sandbox" }
+            }
+         ]
+     }     
+     ]
+}
