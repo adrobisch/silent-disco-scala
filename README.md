@@ -10,7 +10,7 @@ Get your own instance in the cloud
 
 Use this clickstart to install silent disco at cloudbees (you will need an free account):
 
-<a href="https://grandcentral.cloudbees.com/?#CB_clickstart=http://unkonstant.de/dev/repository/silent-disco/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
+<a href="https://grandcentral.cloudbees.com/?#CB_clickstart=https://raw.github.com/adrobisch/silent-disco-scala/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
 
 During the process you will be asked to provide a name / id for your silent disco app.
 
