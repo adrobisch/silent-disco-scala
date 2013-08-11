@@ -1,14 +1,14 @@
 Silent Disco Scala
 ==================
 
-This is a alternative server for [nikku/silent-disco](https://github.com/nikku/silent-disco) implemented with play2 / scala / mongodb.
+This is an alternative server for [nikku/silent-disco](https://github.com/nikku/silent-disco) implemented with play2 / scala / mongodb.
 
-Checkout the [demo installation](http://silent-disco-scala.drobisch.cloudbees.net/).
+Check out the [demo installation](http://silent-disco-scala.drobisch.cloudbees.net/).
 
 Get your own instance in the cloud
 ==================================
 
-Use the clickstart to install silent disco at cloudbees (you will need an free account):
+Use this clickstart to install silent disco at cloudbees (you will need an free account):
 
 <a href="https://grandcentral.cloudbees.com/?#CB_clickstart=http://unkonstant.de/dev/repository/silent-disco/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
 
