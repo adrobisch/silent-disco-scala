@@ -14,7 +14,7 @@ Use this clickstart to install silent disco at cloudbees (you will need an free 
 
 During the process you will be asked to provide a name / id for your silent disco app.
 
-You will need the [cloudbees sdk](https://wiki.cloudbees.com/bin/view/RUN/BeesSDK) command line to complete the setup. 
+You will need the [cloudbees sdk](https://wiki.cloudbees.com/bin/view/RUN/BeesSDK) command line tool to complete the setup. 
 After installing it, execute the following two commands:
 
     bees app:proxy:update -a <yourappid> httpVersion=1.1
