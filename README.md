@@ -22,7 +22,7 @@ After installing it, execute the following two commands:
 Which will enable the websocket support in the cloudbees proxy.
 
     bees config:set -a <yourappid> SC_CLIENT_ID=<your own client id here>
-    bees app:restart as2
+    bees app:restart <yourappid>
 
 To set a valid soundcloud sdk client id for the JavaScript client code and to trigger a restart of the app. 
 You can get a client id at http://soundcloud.com/you/apps/ by creating a new application and looking into its details.
