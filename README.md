@@ -8,7 +8,7 @@ Check out the [demo installation](http://silent-disco-scala.drobisch.cloudbees.n
 Get your own instance in the cloud
 ==================================
 
-Use this clickstart to install silent disco at cloudbees (you will need an free account):
+Use this clickstart to install silent disco at cloudbees (you will need a free account):
 
 <a href="https://grandcentral.cloudbees.com/?#CB_clickstart=https://raw.github.com/adrobisch/silent-disco-scala/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
 
