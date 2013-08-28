@@ -15,6 +15,7 @@ ngDefine('disco.pages', [
   };
 
   var WORD_REGEXP = /^[\w-]+$/;
+  var WORD_WITH_SPACES_REGEXP = /^[\w- ]+$/;
 
   /**
    * Root controller of a room
@@ -182,8 +183,8 @@ ngDefine('disco.pages', [
    * Controller that handles the input field and 
    * chat area.
    */
-  var ChatController = [ '$scope', '$filter', 'Sounds', 'Notifications', 
-                 function($scope, $filter, Sounds, Notifications) {
+  var ChatController = [ '$scope', '$filter', '$window', 'Sounds', 'Notifications', 
+                 function($scope, $filter, $window, Sounds, Notifications) {
 
     var room = $scope.room;
     var messages = $scope.messages = room.messages;
@@ -206,6 +207,12 @@ ngDefine('disco.pages', [
     };
 
     $scope.focusInput = function() {
+      var selection = $window.getSelection();
+
+      if (selection && selection.type == 'Range') {
+        return;
+      }
+
       $('#chat-input').focus();
     };
 
@@ -564,6 +571,7 @@ ngDefine('disco.pages', [
     };
 
     $scope.word = WORD_REGEXP;
+    $scope.wordWithSpaces = WORD_WITH_SPACES_REGEXP;
 
     $scope.toggle = function(button) {
       var form;
@@ -722,9 +730,11 @@ ngDefine('disco.pages', [
       replace: true,
       template:
         '<div class="title" title="{{ track.user.username }} - {{ track.title }}">' +
-        '  <a sound-cloud-user="track.user"></a>' +
-        '  -' +
-        '  <a sound-cloud-track="track"></a>' +
+        '  <div>' + 
+        '    <a sound-cloud-user="track.user"></a>' +
+        '    -' +
+        '    <a sound-cloud-track="track"></a>' +
+        '  </div>' + 
         '</div>'
     };
   });

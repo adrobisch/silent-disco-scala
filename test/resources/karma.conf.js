@@ -12,7 +12,9 @@ files = [
   JASMINE_ADAPTER,
   REQUIRE,
   REQUIRE_ADAPTER,
-  {pattern: 'specs/*Spec.js', included: false},
+  {pattern: 'specs/basicSpec.js', included: false},
+  {pattern: 'specs/deleteSpec.js', included: false},
+  {pattern: 'specs/helper.js', included: false},
   'test-main.js'
 ];
 

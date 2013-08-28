@@ -7,6 +7,6 @@
     "components"
   ],
   "dependencies" : {
-    "silent-disco" : "https://github.com/Nikku/silent-disco/archive/1181f6e0fe096b5725ea48540f7ab963ff9d3b71.zip"
+    "silent-disco" : "https://github.com/Nikku/silent-disco/archive/98f53f8c50c7fb7ada69717c57b1769b25c6d6eb.zip"
   }
 }

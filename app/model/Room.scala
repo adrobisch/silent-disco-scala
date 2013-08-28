@@ -168,6 +168,7 @@ class Room(roomId: String) extends Actor with ActorLogging {
       case ("startTrack", payload) => StartTrack((payload \ "trackId").as[String], (payload \ "position").as[Int])
       case ("stopTrack", payload) => StopTrack((payload \ "trackId").as[String])
       case ("moveTrack", payload) => MoveTrack((payload \ "trackId").as[String], ((payload \ "from") \ "position").as[Int], ((payload \ "to") \ "position").as[Int])
+      case _ =>
     }
   }
 
